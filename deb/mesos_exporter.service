@@ -1,0 +1,19 @@
+[Unit]
+Description=Daemon for mesos_exporter
+After=
+Wants=
+Requires=
+
+[Service]
+Type=simple
+Restart=on-failure
+StartLimitInterval=20
+StartLimitBurst=5
+TimeoutStartSec=0
+Environment="HOME=/root"
+SyslogIdentifier=mesos_exporter
+ExecStart=/usr/bin/mesos_exporter -slave http://localhost:5051
+WorkingDirectory=/tmp
+
+[Install]
+WantedBy=multi-user.target

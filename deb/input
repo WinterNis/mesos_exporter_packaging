@@ -1,0 +1,2 @@
+build/mesos_exporter=/usr/bin/
+deb/logrotate=/etc/logrotate.d/mesos_exporter
